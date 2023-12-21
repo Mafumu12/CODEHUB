@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/friends.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/home.css'%}" />
+    <title>Friends</title>
+  </head>
+  <body>
+    <div class="friend-main-container">
+      {% include 'navbar.html' %}
+      <div class="friends-second-quater">
+        <div class="search-friends-quater">
+          <form action="" class="friend-search-section">
+            <button class="search-button">
+              <img
+                class="search-icon"
+                src="{% static 'images/search.png ' %}"
+                alt="direct message"
+              />
+            </button>
+            <input
+              class="friends-search"
+              placeholder="find friends"
+              type="search"
+            />
+          </form>
+        </div>
+
+        <div class="box">
+          <div class="friend-section-1">
+            <h1>Friend suggestions</h1>
+
+            {% if suggested_friends %}
+            <div class="debug-section">
+              <p>
+                Number of suggested profiles: {{ suggested_friends | length }}
+              </p>
+              <pre>{{ suggested_friends }}</pre>
+            </div>
+
+            <div class="suggestions">
+              {% for profile in suggested_friends %}
+              <div class="friend-card">
+                <img
+                  class="f-p-i"
+                  src="{{ profile.profile_image.url }}"
+                  alt="view profile"
+                />
+
+                <div class="f-info">
+                  <p id="u-name">{{ profile.username }}</p>
+                  <p id="abo">{{ profile.about }}</p>
+
+                  <a class="add-button" href="{% url 'send_request' %}">
+                    <button
+                      class="a-b add-friend-btn"
+                      data-profile-id="{{ profile.profile_id }}"
+                      onclick="sendFriendRequest('{{ profile.profile_id }}', updateUIFunction)"
+                    >
+                      Add friend
+                    </button>
+                  </a>
+                </div>
+
+                <!-- Add this somewhere in your template for debugging -->
+              </div>
+              {% endfor %}
+            </div>
+
+            {% else %}
+            <p>No suggested profiles at the moment.</p>
+            {% endif %}
+          </div>
+
+          <div class="friend-section-10">
+            <h1>Friend requests</h1>
+            <div class="req">
+              <div class="friend-card-1">
+                <img
+                  class="f-p-i"
+                  src="{% static 'images/profile-icon.png' %}"
+                  alt="view profile"
+                />
+                <p id="u-name">Username</p>
+                <p id="abo">About</p>
+
+                <a href=""> <button class="a-b">Accept</button></a>
+
+                <button class="a-b">Decline</button>
+              </div>
+              <div class="friend-card-1">
+                <img
+                  class="f-p-i"
+                  src="{% static 'images/profile-icon.png' %}"
+                  alt="view profile"
+                />
+                <p id="u-name">Username</p>
+                <p id="abo">About</p>
+
+                <a href=""> <button class="a-b">Accept</button></a>
+
+                <button class="a-b">Decline</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="friend-section">
+          <h1>Friends</h1>
+          <div class="friends-quater">
+            <img
+              class="friends-profile-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="view profile"
+            />
+
+            <p>USERNAME</p>
+            <a href="" class="message-button-1">
+              <img
+                class="friends-message-icon"
+                src="{% static 'images/message-icon.png' %}"
+                alt="create message"
+              />
+            </a>
+          </div>
+          <div class="friends-quater">
+            <img
+              class="friends-profile-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="view profile"
+            />
+
+            <p>USERNAME</p>
+            <a href="" class="message-button-1">
+              <img
+                class="friends-message-icon"
+                src="{% static 'images/message-icon.png' %}"
+                alt="create message"
+              />
+            </a>
+          </div>
+          <div class="friends-quater">
+            <img
+              class="friends-profile-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="view profile"
+            />
+
+            <p>USERNAME</p>
+            <a href="" class="message-button-1">
+              <img
+                class="friends-message-icon"
+                src="{% static 'images/message-icon.png' %}"
+                alt="create message"
+              />
+            </a>
+          </div>
+          <div class="friends-quater">
+            <img
+              class="friends-profile-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="view profile"
+            />
+
+            <p>USERNAME</p>
+            <a href="" class="message-button-1">
+              <img
+                class="friends-message-icon"
+                src="{% static 'images/message-icon.png' %}"
+                alt="create message"
+              />
+            </a>
+          </div>
+          <div class="friends-quater">
+            <img
+              class="friends-profile-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="view profile"
+            />
+
+            <p>USERNAME</p>
+            <a href="" class="message-button-1">
+              <img
+                class="friends-message-icon"
+                src="{% static 'images/message-icon.png' %}"
+                alt="create message"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function sendFriendRequest(id, uiUpdateFunction) {
+        console.log("sendFriendRequest called with id:", id);
+        payload = {
+          csrfmiddlewaretoken: "{{ csrf_token }}",
+          receiver_user_id: id,
+        };
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          url: "{% url 'send_request' %}",
+          timeout: 5000,
+          data: payload,
+          success: function (data) {
+            console.log("SUCCESS:" + data);
+            if (data["response"] == "friend request sent.") {
+            } else if (data["response"] != null) {
+              alert(data["response"]);
+            }
+          },
+          error: function (data) {
+            alert("something went wrong: " + data);
+          },
+          complete: function (data) {
+            console.log("UI update function called");
+            uiUpdateFunction();
+          },
+        });
+        console.log("UI update function about to be called");
+        uiUpdateFunction();
+      }
+    </script>
+  </body>
+</html>

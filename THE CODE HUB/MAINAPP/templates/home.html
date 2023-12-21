@@ -1,0 +1,252 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!--Navbar-->
+      {% include 'navbar.html'%}
+      <!--first section-->
+
+      <div class="first-section">
+        <!--search form-->
+        <form action="" class="first-section-search">
+          <button type="submit" class="search-button">
+            <img
+              class="search-icon"
+              src=" {% static 'images/search.png' %}"
+              alt="direct message"
+            />
+          </button>
+          <input class="search" placeholder="Browse Convos" type="search" />
+        </form>
+        <!--create message -->
+
+        <div class="create-message">
+          <a href="" class="create-message-link">
+            <img
+              class="create-icon"
+              src="{% static 'images/add.png' %}"
+              alt=""
+            />
+            <p>CREATE MESSAGE</p>
+          </a>
+        </div>
+
+        <!--User profiles-->
+        <div class="message-users">
+          <img
+            class="profile-pic"
+            src="{% static 'images/profile-icon.png' %}"
+            alt=""
+          />
+          <p>Username</p>
+          <a href=""
+            ><img
+              class="message-icon"
+              src="{% static 'images/message-icon.png' %}"
+              alt=""
+          /></a>
+        </div>
+        <div class="message-users">
+          <img
+            class="profile-pic"
+            src="{% static 'images/profile-icon.png' %}"
+            alt=""
+          />
+          <p>Username</p>
+          <a href=""
+            ><img
+              class="message-icon"
+              src="{% static 'images/message-icon.png' %}"
+              alt=""
+          /></a>
+        </div>
+
+        <div class="profile-block" id="popup">
+          <div
+            class="profile-banner"
+            style="background-image: url('{{ user_profile.cover_photo.url }}');"
+          >
+            <img
+              class="profile-image"
+              src="{{user_profile.profile_image.url}}"
+              alt=""
+            />
+          </div>
+
+          <div class="info">
+            <div class="info-username">
+              <p>{{user_profile.username}}</p>
+            </div>
+
+            <div class="info-about">
+              <p>{{user_profile.about}}</p>
+            </div>
+            <div class="info-date">
+              <p>{{user_profile.date_joined}}</p>
+            </div>
+            <button type="button" onclick="closepopup()">close</button>
+          </div>
+        </div>
+        <div class="profile-section">
+          <a href="" onclick="openPopup(event)">
+            <img
+              class="user-pic"
+              src="{{user_profile.profile_image.url}}"
+              alt=""
+            />
+          </a>
+          <p>{{user_profile.username}}</p>
+
+          <a href="{% url 'profilesettings' %}"
+            ><img
+              class="gear-icon"
+              src="{% static 'images/gear-icon.png' %}"
+              alt=""
+          /></a>
+        </div>
+      </div>
+      <!--second section-->
+      <div class="second-section">
+        <div class="section-head">
+          <div class="second-profile-section">
+            <img
+              class="user-img"
+              src="{{user_profile.profile_image.url}}"
+              alt=""
+            />
+            <p>{{user_profile.username}}</p>
+          </div>
+          <form action="" class="second-section-search">
+            <button type="submit" class="search-button">
+              <img
+                class="search-icon"
+                src="{% static 'images/search.png' %}"
+                alt="direct message"
+              />
+            </button>
+            <input class="search" placeholder="Browse Convos" type="search" />
+          </form>
+        </div>
+
+        <div class="rooms">
+          <div class="particular-message">
+            <img
+              class="sender-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="direct message"
+            />
+            <div>
+              <div class="message-info">
+                <p class="name">USERNAME</p>
+                <p class="date">10/04/2023 10:23PM</p>
+              </div>
+
+              <p class="text">
+                I'm really interested in this career path and really see myself
+                also making my way up.I will be applying to marcy lab school and
+                hope to be become a student there.
+              </p>
+            </div>
+          </div>
+          <div class="particular-message">
+            <img
+              class="sender-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="direct message"
+            />
+            <div>
+              <div class="message-info">
+                <p class="name">USERNAME</p>
+                <p class="date">10/04/2023 10:23PM</p>
+              </div>
+
+              <p class="text">
+                I'm really interested in this career path and really see myself
+                also making my way up.I will be applying to marcy lab school and
+                hope to be become a student there.
+              </p>
+            </div>
+          </div>
+          <div class="particular-message">
+            <img
+              class="sender-icon"
+              src="{% static 'images/profile-icon.png' %}"
+              alt="direct message"
+            />
+            <div>
+              <div class="message-info">
+                <p class="name">USERNAME</p>
+                <p class="date">10/04/2023 10:23PM</p>
+              </div>
+
+              <p class="text">
+                I'm really interested in this career path and really see myself
+                also making my way up.I will be applying to marcy lab school and
+                hope to be become a student there.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-footer">
+          <form action="" class="second-section-message">
+            <button type="submit" class="files-button">
+              <img
+                class="add-files-icon"
+                src="{% static 'images/navbar-icons/create-server.png' %}"
+                alt="direct message"
+              />
+            </button>
+
+            <input
+              class="message-box"
+              placeholder="#start a conversion with@USERNAME"
+              type="search"
+            />
+            <button type="submit" class="emoji-button">
+              <img
+                class="emoji-icon"
+                src="{% static 'images/emoji-icon.png' %}"
+                alt="direct message"
+              />
+            </button>
+            <button type="submit" class="send-button">
+              <img
+                class="send-icon"
+                src="{% static 'images/send-icon.png' %}"
+                alt="direct message"
+              />
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      let popup = document.getElementById("popup");
+
+      function openPopup(event) {
+        // Prevent the default action of the anchor element
+        event.preventDefault();
+
+        // Add a delay to the removal of the "open-popup" class to ensure it stays open
+        setTimeout(() => {
+          popup.classList.add("open-popup");
+        }, 100);
+      }
+
+      function closepopup() {
+        popup.classList.remove("open-popup");
+      }
+    </script>
+  </body>
+</html>

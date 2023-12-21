@@ -1,0 +1,213 @@
+:root
+{
+    --primary-color:#1F2125;
+    --secondary-color:#BEF402;
+    --tetiary-color:#FFFFFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    background-color:black;
+}
+
+.friend-main-container
+{
+    width: 100%;
+    height: 100%;
+    background-color:black;
+    display: grid;
+    grid-template-columns: 1fr 21fr;
+}
+.friends-second-quater
+{
+    width: 99%;
+    height: 100%;
+    margin-left: 0.5%;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.search-friends-quater
+{
+     
+    width: 100%;
+    height: 60px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    padding-top: 0.5px;
+
+}
+.friend-search-section
+{
+    height: 40px;
+    border-radius: 10px;
+    width:20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10px;
+    display: flex;
+    background-color: #FFFFFF;
+}
+
+.friends-search
+{
+    margin: 10px;
+    border: none;  
+    height: 20px;
+    width:100%;
+    font-family: oxanium;
+    font-weight: 200; 
+}
+.box
+{
+    display: flex;
+    
+}
+.friend-section-1
+{
+   border-radius: 10px; 
+   width:50%;
+   height: 100%;
+   background-color: var(--primary-color);
+   margin-top: 10px;
+   padding: 20px;
+}
+.suggestions
+{
+    display: flex;
+    text-align: center;
+    width: 80%;
+    margin-left: 20%;
+}
+
+.friend-card
+{
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.f-p-i{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+#u-name
+{
+    font-family: oxanium;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+#abo
+{
+    font-family: oxanium;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--tetiary-color);  
+}
+
+.a-b{
+    background-color: var(--secondary-color);
+    color: black;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    font-family: oxanium;
+    font-weight: 600;
+}
+
+.friend-section-10
+{
+   height:100%;
+   border-radius: 10px; 
+   width:50%;
+   background-color: var(--primary-color);
+   margin-top: 10px;
+   margin-left: 10px;
+   font-family: oxanium;
+   color: var(--tetiary-color);
+   text-align: center;
+   padding: 20px;
+}
+.req{
+    display: flex;
+    width: 80%;
+    margin-left: 22%;
+
+}
+
+.friend-card-1{
+    text-align: center;
+    margin: 10px;
+}
+ 
+.friend-section
+{
+    margin-top: 10px;
+   border-radius: 10px; 
+   width: 100%;
+   background-color: var(--primary-color); 
+   padding: 20px;
+}
+
+
+.friends-quater{
+     
+    width: 50%;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: oxanium;
+    color: var(--tetiary-color);
+    font-weight: 500;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 25%;
+}
+
+.friends-profile-icon
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin:10px 0 10px 10px;
+}
+
+.friends-message-icon
+{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin:10px 0 10px 10px;
+}
+
+.friend-section h1{
+    font-family:oxanium;
+    color: var(--tetiary-color);
+    text-align: center;
+}
+
+.friend-section-1 h1{
+    font-family:oxanium;
+    color: var(--tetiary-color);
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+

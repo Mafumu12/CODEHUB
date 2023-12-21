@@ -1,0 +1,92 @@
+:root
+{
+    --primary-color:#1F2125;
+    --secondary-color:#BEF402;
+    --tetiary-color:#FFFFFF;
+    --alternative-color:#242429;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body
+{
+    height: 100%;
+    background-color: var(--primary-color);
+}
+.hero
+{
+    text-align: center;
+    font-family: oxanium;
+    background-color: var(--secondary-color);
+    height: 350px;
+    padding-top: 2.5%;
+}
+
+.hero h1{
+    font-weight: 700;
+
+
+}
+.hero p
+{
+    font-weight: 300;
+    font-size: 20px;
+    width: 47%;
+    text-align: center;
+    margin-left: 27%;
+}
+
+.login
+{
+    height: 350px;
+    width: 50%;
+    background-color: var(--tetiary-color);
+    margin-left: 25%;
+    margin-top: 2.5%;
+     
+}
+
+.in
+{
+    height: 60px;
+    width: 400px;
+    margin-top: 40px;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    font-family: oxanium;
+    font-weight: 200;
+    font-size: 20px;
+}
+.in-si
+{
+    height: 40px;
+    width: 400px;
+    margin-top: 40px;
+    border-radius: 5px;
+    border: 1px solid #707070;
+    font-family: oxanium;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.login p
+{
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+}
+.login button
+{
+    width: 150px;
+    height: 35px;
+    font-family: oxanium;
+    font-weight: 500;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+}

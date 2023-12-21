@@ -1,0 +1,36 @@
+:root
+{
+    --primary-color:#1F2125;
+    --secondary-color:#BEF402;
+    --tetiary-color:#FFFFFF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+.navbar
+{
+    background-color: var(--primary-color);
+    width: 70px;
+    height: 100%;
+    border-radius: 10px;
+     
+}
+ 
+
+.nav-icons
+{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+
+ 

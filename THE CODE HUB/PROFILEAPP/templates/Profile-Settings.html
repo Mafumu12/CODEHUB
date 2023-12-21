@@ -1,0 +1,61 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/profile-settings.css' %}" />
+    <title>Profile Settings</title>
+  </head>
+  <body>
+    <div class="profiles-main">
+      {% include 'accounts-navbar.html' %}
+
+      <div class="profile-quater">
+        <div class="profile-container">
+          <div
+            class="banner"
+            style="background-image: url('{{ user_profile.cover_photo.url }}');"
+          >
+            <img
+              class="sender-icon"
+              src="{{user_profile.profile_image.url}}"
+              alt="profile picture"
+            />
+          </div>
+
+          <div class="detail">
+            <div class="profi">
+              <h1>{{user_profile.username}}</h1>
+            </div>
+            <a
+              style="text-decoration: none"
+              href="{% url 'EditProfile' user_profile.profile_id %}"
+              ><button>EDIT PROFILE</button></a
+            >
+          </div>
+          <div class="profile-section">
+            <div class="name">
+              <div class="sub">
+                <h3 class="dn">Display Name</h3>
+                <p class="un">{{user_profile.username}}</p>
+              </div>
+              <a
+                style="text-decoration: none"
+                href="{% url 'EditProfile' user_profile.profile_id %}"
+                ><button>EDIT</button></a
+              >
+            </div>
+
+            <a
+              href="{% url 'DeleteProfile' user_profile.profile_id %}"
+              class="delete"
+            >
+              <button class="delete-btn">DELETE ACCOUNT</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

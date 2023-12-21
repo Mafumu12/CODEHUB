@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/auth.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>THE CODE HUB</h1>
+          <p>
+            the ultimate platform for creative coders! At CodeHub, we've created
+            a vibrant online space where coding enthusiasts from all walks of
+            life can gather, create chat rooms, and engage in meaningful
+            discussions with like-minded individuals.
+          </p>
+        </div>
+        <form method="post" action="{% url 'signup' %}" class="login">
+          {% csrf_token %}
+          <input
+            class="in-si"
+            type="username"
+            placeholder="username"
+            name="{{form.username.name}}"
+            required
+          />
+          <br />
+          <input
+            class="in-si"
+            type="password"
+            placeholder="password1"
+            name="{{form.password1.name}}"
+            required
+          />
+          <br />
+          <input
+            class="in-si"
+            type="password"
+            name="{{form.password2.name}}"
+            placeholder="confirm password"
+            required
+          />
+          <br />
+          <p>
+            Already have an account? click
+            <a href="{% url 'login' %}">here</a> to login
+          </p>
+          <br />
+          <button type="submit">SIGNUP</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

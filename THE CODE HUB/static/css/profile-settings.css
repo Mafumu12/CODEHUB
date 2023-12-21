@@ -1,0 +1,162 @@
+:root
+{
+    --primary-color:#1F2125;
+    --secondary-color:#BEF402;
+    --tetiary-color:#FFFFFF;
+    --alternative-color:#242429;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ html,body{
+    
+    height: 100%;
+
+
+}
+
+.profiles-main
+{
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    column-gap: 0;
+    
+     
+    
+     
+}
+.profile-quater
+{
+    
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    
+}
+.profile-container
+{
+    width: 80%;
+    height: 400px;
+    margin-left: 10%;
+    margin-top: 12%;
+    background-color: #242429;
+    border: 1px solid var(--secondary-color);
+     
+}
+.banner
+{
+     
+    height: 100px;
+}
+.sender-icon
+{
+    width: 80px;
+    height: 80px;
+    border-radius:50%;
+    margin-left: 5%;
+    margin-top: 60px;
+
+}
+.detail
+{
+    display: flex;
+    justify-content: space-between;
+     margin-left: 130px;
+     margin-top: 4px;
+      
+}
+.detail button
+{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: oxanium;
+    font-weight: 500;
+    margin-right: 60px;
+    
+}
+.profi
+{
+    display: flex;
+    
+}
+.profi h1{
+ color: var(--tetiary-color);
+ font-weight: 400;
+ font-size: 30px;
+}
+
+.profile-section
+{
+    width: 90%;
+    height: 200px;
+    margin-left: 5%;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    padding: 2%;
+}
+.name
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.name h1
+{
+     font-family: Oxanium;
+     font-weight: 500;
+     color: var(--tetiary-color);
+}
+
+.dn
+{
+font-family: Oxanium;
+font-weight: 500;
+color: var(--secondary-color);
+font-size: 25px;
+}
+.un
+{
+    font-family: oxanium;
+    font-weight: 400;
+color: var(--tetiary-color);
+}
+.name button
+{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: oxanium;
+    font-weight: 500;
+}
+.delete-btn
+{
+    width: 120px;
+    height: 40px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: oxanium;
+    font-weight: 500;
+}
+.delete
+{
+   
+    margin-top: 15px;
+    text-decoration: none;
+    margin-left: 625px;
+
+}
+ 
